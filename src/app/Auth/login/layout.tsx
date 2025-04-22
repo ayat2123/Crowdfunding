@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import LoginNavbar from "./component/shared/LoginNavbar";
 
 const geistSans = Geist({
   subsets: ["latin"],
@@ -12,17 +13,18 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Authentication",
-  description: "Authentication pages for Fund for Found",
+  title: "Login",
+  description: "Login to your Fund for Found account",
 };
 
-export default function AuthLayout({
+export default function LoginLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
     <div className={`${geistSans.variable} ${geistMono.variable}`}>
+      <LoginNavbar />
       {children}
     </div>
   );
