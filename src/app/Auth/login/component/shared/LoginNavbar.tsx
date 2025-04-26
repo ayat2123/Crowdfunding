@@ -4,20 +4,20 @@ import Image from 'next/image'
 export default function LoginNavbar() {
   const links = [
     {
-      text: "Solutions",
-      href: "/Solutions"
+      text: "Home",
+      href: "/Home"
     },
     {
-      text: "Product",
-      href: "/Product"
-    },
-    {
-      text: "Company",
-      href: "/Company"
+      text: "Brand and organization",
+      href: "/Brand and organization"
     },
     {
       text: "Help and support",
       href: "/Help and support"
+    },
+    {
+      text: "About us",
+      href: "/About us"
     }
   ]
   return (
@@ -25,7 +25,7 @@ export default function LoginNavbar() {
       <div className="max-w-md mx-auto p-4">
         <ul className='flex items-center justify-center mt-3'>
           {links.map((link, index) => (
-            <li className='p-2 flex items-center gap-2' key={link.text}>
+            <li className='p-1 flex items-center gap-1' key={link.text}>
               <Link href={link.href} className="no-underline hover:text-indigo-600 text-sm">{link.text}</Link>
               {index !== links.length - 1 && (
                 <Image 
