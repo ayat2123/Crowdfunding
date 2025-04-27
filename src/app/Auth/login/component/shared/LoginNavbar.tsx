@@ -9,15 +9,15 @@ export default function LoginNavbar() {
     },
     {
       text: "Brand and organization",
-      href: "/Brand and organization"
+      href: "/Brand-and-organization"
     },
     {
       text: "Help and support",
-      href: "/Help and support"
+      href: "/Help-and-support"
     },
     {
       text: "About us",
-      href: "/About us"
+      href: "/Aboutus"
     }
   ]
   return (
