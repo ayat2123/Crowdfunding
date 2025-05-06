@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import * as yup from 'yup'
 import toast, { Toaster } from 'react-hot-toast'
+import LoginNavbar from '../login/component/shared/LoginNavbar'
 
 interface FormData {
   email: string;
@@ -76,6 +77,7 @@ export default function ForgetPassword() {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <LoginNavbar/>
       <div className="flex min-h-[calc(100vh-64px)] flex-col items-center justify-center p-4">
         <div className="w-full max-w-md space-y-8 rounded-lg bg-white p-8 shadow-lg">
           <Toaster position="top-center" />
