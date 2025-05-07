@@ -83,9 +83,9 @@ export default function Login() {
   }
 
   return (
-    <div className="flex items-center justify-center min-h-screen h-full">
+    <div className="flex flex-col items-center justify-center min-h-screen h-full">
       <Toaster position="top-center" />
-      <div className="text-center bg-white p-6 rounded-lg shadow-lg max-w-sm w-full mx-4 my-4">
+      <div className="text-center bg-white p-6 rounded-lg shadow-lg max-w-sm w-full mx-4">
         <h1 className="text-2xl font-bold mb-3 text-center" style={{ color: 'rgba(100, 79, 193, 1)' }}>FUND FOR FOUND</h1>
         <p className="text-base text-gray-600 mb-3 max-w-xs mx-auto text-center">create an account or sign in to start<br />creating</p>
         <div style={{ width: '80px', height: '80px', margin: '0 auto' }}>
@@ -99,7 +99,7 @@ export default function Login() {
           />
         </div>
         
-        <div className="mt-6">
+        <div >
           <button 
             className="w-full flex items-center justify-center gap-2 bg-white border border-gray-300 rounded-lg px-4 py-1.5 text-sm font-medium text-gray-800 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
             onClick={() => toast.success('Google login successful')}
@@ -170,13 +170,13 @@ export default function Login() {
             </div>
           </form>
 
+        </div>
+      </div>
           <div className="mt-4 text-center">
             <span className="text-xs text-gray-500">
               This site is protected by reCAPTCHA and the Google Privacy and Policy and Terms of Service apply
             </span>
           </div>
-        </div>
-      </div>
     </div>
   )
 }

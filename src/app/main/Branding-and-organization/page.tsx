@@ -1,29 +1,58 @@
+import PublicFooter from '@/components/PublicFooter'
 import PublicNavbar from '@/components/PublicNavbar'
 import Image from 'next/image'
 import React from 'react'
 
-export default function page() {
+export default function BrandingPage() {
   return (
-    <div>
+    <div className="min-h-screen flex flex-col">
       <PublicNavbar />
-      <div className='flex flex-col '>
-        <h1>Create your profile and take the first step towards new opportunities</h1>
-        <p>By creating your account, you will gain access to a thriving community
-          where brands and individuals are committed to offering you ongoing support.
-          this support network will empover you with the resources, guidance and
-          connections you need to succeed,ensuring that you re never alone on your journey</p>
-        <div>
-          <Image
-            src="/Vector (4).png"
-            alt="Separator"
-            width={8}
-            height={8}
-            className="w-2 h-2 hidden md:block"
-          />
-        </div>
-      </div>
+      
+      <main className="flex-1 container mx-auto px-4 py-12">
+        {/* Hero Section */}
+        <section className="max-w-4xl mx-auto text-center mb-16 space-y-6">
+          <h1 className="text-2xl md:text-2xl font-bold  leading-tight bg-gradient-to-b from-[#270F94] to-[#270F94] bg-clip-text text-transparent">
+            Create your profile and take the first step towards new opportunities
+          </h1>
+          <p className="text-base md:text-base text-gray-600 leading-relaxed max-w-3xl mx-auto">
+            By creating your account, you will gain access to a thriving community
+            where brands and individuals are committed to offering you ongoing support.
+            This support network will empower you with the resources, guidance and
+            connections you need to succeed, ensuring that you're never alone on your journey.
+          </p>
+        </section>
 
+        {/* Brand Section */}
+        <section className="max-w-3xl mx-auto bg-white rounded-2xl shadow-xl p-8 md:p-12 space-y-8">
+          <div className="flex justify-center">
+            <Image
+              src="/Vector (6).png"
+              alt="Brand Separator"
+              width={50}
+              height={50}
+              className="w-8 h-8"
+            />
+          </div>
+          
+          <div className="text-center space-y-4">
+            <h2 className="text-xl md:text-2xl font-bold text-gray-900">
+              Brand and Organization
+            </h2>
+            <p className="text-base text-[#644FC1] max-w-2xl mx-auto">
+              If your brand is established and you're looking for continuous support,
+              get started now and join our community of successful organizations.
+            </p>
+          </div>
 
+          <div className="flex justify-center pt-6">
+            <button className="bg-indigo-600 hover:bg-indigo-700 text-white text-lg font-semibold px-16 py-3 rounded-full transition-colors duration-200 shadow-lg hover:shadow-xl">
+              start
+            </button>
+          </div>
+        </section>
+      </main>
+
+      <PublicFooter />
     </div>
   )
 }

@@ -69,7 +69,7 @@ export default function PublicNavbar() {
             />
           </div>
           <div className="mt-3 md:mt-0">
-            <Link href="/auth/login">
+            <Link href="/Auth/login">
               <button className="bg-indigo-500 hover:bg-indigo-600 text-white text-sm font-semibold py-2 px-4 md:px-8 rounded-full transition w-full md:w-auto">
                 Login
               </button>
