@@ -97,8 +97,8 @@ export default function Signup() {
       <Toaster position="top-right" />
       <PublicNavbar />
 
-      <div className="relative w-full flex justify-center items-center ">
-        <Link href="/Auth/login" className="absolute left-8">
+      <div className="relative w-full flex justify-center items-center  ">
+        <Link href="/Auth/login" className="absolute left-8 hidden md:block" >
           <Image
             src="/Vector (5).png"
             alt="Go to login"

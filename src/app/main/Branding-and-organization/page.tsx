@@ -23,29 +23,28 @@ export default function BrandingPage() {
         </section>
 
         {/* Brand Section */}
-        <section className="max-w-3xl mx-auto bg-white rounded-2xl shadow-xl p-8 md:p-12 space-y-8">
+        <section className="max-w-sm mx-auto bg-white rounded-2xl shadow-xl p-8 md:p-12 space-y-8">
           <div className="flex justify-center">
             <Image
               src="/Vector (6).png"
               alt="Brand Separator"
-              width={50}
-              height={50}
-              className="w-8 h-8"
+              width={80}
+              height={80}
             />
           </div>
           
           <div className="text-center space-y-4">
-            <h2 className="text-xl md:text-2xl font-bold text-gray-900">
+            <h2 className="text-xl md:text-2xl font-bold text-[#644FC1] ">
               Brand and Organization
             </h2>
-            <p className="text-base text-[#644FC1] max-w-2xl mx-auto">
+            <p className="text-xs text-gray-900 max-w-2xl mx-auto">
               If your brand is established and you're looking for continuous support,
               get started now and join our community of successful organizations.
             </p>
           </div>
 
           <div className="flex justify-center pt-6">
-            <button className="bg-indigo-600 hover:bg-indigo-700 text-white text-lg font-semibold px-16 py-3 rounded-full transition-colors duration-200 shadow-lg hover:shadow-xl">
+            <button className="bg-indigo-600 hover:bg-indigo-700 w-full text-white text-lg font-semibold px-16 py-3 rounded transition-colors duration-200 shadow-lg hover:shadow-xl">
               start
             </button>
           </div>
