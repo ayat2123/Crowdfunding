@@ -1,6 +1,7 @@
 import PublicFooter from '@/components/PublicFooter'
 import PublicNavbar from '@/components/PublicNavbar'
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 export default function BrandingPage() {
@@ -43,11 +44,13 @@ export default function BrandingPage() {
             </p>
           </div>
 
+            <Link href='/main/Branding-and-organization/Basic-Info'>
           <div className="flex justify-center pt-6">
-            <button className="bg-indigo-600 hover:bg-indigo-700 w-full text-white text-lg font-semibold px-16 py-3 rounded transition-colors duration-200 shadow-lg hover:shadow-xl">
+            <button className="bg-indigo-600 hover:bg-indigo-700 w-full text-white text-lg font-semibold px-16 py-3 rounded transition-colors duration-200 cursor-pointer shadow-lg hover:shadow-xl">
               start
             </button>
           </div>
+            </Link>
         </section>
       </main>
 
