@@ -90,7 +90,7 @@ export default function Login() {
         <p className="text-base text-gray-600 mb-3 max-w-xs mx-auto text-center">create an account or sign in to start<br />creating</p>
         <div style={{ width: '80px', height: '80px', margin: '0 auto' }}>
           <Image 
-            src="/vector.png"
+            src="/Vector.png"
             alt="Vector illustration"
             width={80}
             height={80}
