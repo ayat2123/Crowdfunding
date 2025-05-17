@@ -1,6 +1,21 @@
 "use client";
 
 import { useState } from "react";
+
+interface SocialLink {
+    platform: string;
+    url: string;
+}
+
+interface PlatformUrls {
+    [key: string]: string;
+}
+
+interface Platform {
+    label: string;
+    value: string;
+    icon: string;
+}
 import PublicFooter from "@/components/PublicFooter";
 import PublicNavbar from "@/components/PublicNavbar";
 import StepIndicator from "@/components/StepIndicator";
@@ -13,7 +28,7 @@ export default function DetailedInfo() {
     const [customDesc, setCustomDesc] = useState("");
 
     // social links state
-    const [socialLinks, setSocialLinks] = useState([
+    const [socialLinks, setSocialLinks] = useState<SocialLink[]>([
         { platform: "", url: "" },
         { platform: "", url: "" },
     ]);
@@ -41,7 +56,7 @@ export default function DetailedInfo() {
         setSocialLinks(newLinks);
     };
 
-    const platforms = [
+    const platforms: Platform[] = [
         { label: "Choose platform...", value: "", icon: "/icons/social/blank.svg" },
         { label: "Twitter", value: "twitter", icon: "/icons/social/twitter.svg" },
         { label: "Instagram", value: "instagram", icon: "/icons/social/instagram.svg" },
@@ -50,7 +65,7 @@ export default function DetailedInfo() {
         { label: "YouTube", value: "youtube", icon: "/icons/social/youtube.svg" },
     ];
 
-    const platformBaseUrls = {
+    const platformBaseUrls: PlatformUrls = {
         twitter: "https://twitter.com/",
         instagram: "https://instagram.com/",
         linkedin: "https://linkedin.com/in/",
@@ -59,18 +74,18 @@ export default function DetailedInfo() {
     };
 
     // دکمه کلیک روی آیکون برای پاک کردن متن نمونه و رفتن به حالت ویرایش
-    const handleClearDesc = () => {
+    const handleClearDesc = (): void => {
         setDescMode("editing");
         setCustomDesc("");
     };
 
     // ذخیره متن
-    const handleSaveDesc = () => {
+    const handleSaveDesc = (): void => {
         setDescMode("saved");
     };
 
     // ویرایش مجدد متن ذخیره شده
-    const handleEditDesc = () => {
+    const handleEditDesc = (): void => {
         setDescMode("editing");
     };
 
