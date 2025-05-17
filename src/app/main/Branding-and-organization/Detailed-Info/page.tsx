@@ -37,7 +37,7 @@ export default function DetailedInfo() {
         setSocialLinks(prev => [...prev, { platform: "", url: "" }]);
     };
 
-    const removeSocialLink = (indexToRemove:number) => {
+    const removeSocialLink = (indexToRemove: number): void => {
         setSocialLinks(prev => prev.filter((_, index) => index !== indexToRemove));
     };
 
