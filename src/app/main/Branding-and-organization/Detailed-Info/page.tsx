@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import PublicFooter from "@/components/PublicFooter";
 import PublicNavbar from "@/components/PublicNavbar";
 import StepIndicator from "@/components/StepIndicator";
@@ -7,6 +8,51 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function DetailedInfo() {
+    const [socialLinks, setSocialLinks] = useState([
+        { platform: "", url: "" },
+        { platform: "", url: "" },
+    ]);
+
+    const addSocialLinks = () => {
+        setSocialLinks(prev => [...prev, { platform: "", url: "" }]);
+    };
+
+    const removeSocialLink = (indexToRemove) => {
+        setSocialLinks(prev => prev.filter((_, index) => index !== indexToRemove));
+    };
+
+    const updateLink = (index, key, value) => {
+        const newLinks = [...socialLinks];
+
+        if (key === "platform") {
+            newLinks[index].platform = value;
+            if (!newLinks[index].url) {
+                newLinks[index].url = platformBaseUrls[value] || "";
+            }
+        } else {
+            newLinks[index][key] = value;
+        }
+
+        setSocialLinks(newLinks);
+    };
+
+    const platforms = [
+        { label: "Choose platform...", value: "", icon: "/icons/social/blank.svg" },
+        { label: "Twitter", value: "twitter", icon: "/icons/social/twitter.svg" },
+        { label: "Instagram", value: "instagram", icon: "/icons/social/instagram.svg" },
+        { label: "LinkedIn", value: "linkedin", icon: "/icons/social/linkedin.svg" },
+        { label: "Facebook", value: "facebook", icon: "/icons/social/facebook.svg" },
+        { label: "YouTube", value: "youtube", icon: "/icons/social/youtube.svg" },
+    ];
+
+    const platformBaseUrls = {
+        twitter: "https://twitter.com/",
+        instagram: "https://instagram.com/",
+        linkedin: "https://linkedin.com/in/",
+        facebook: "https://facebook.com/",
+        youtube: "https://youtube.com/",
+    };
+
     return (
         <div className="min-h-screen bg-gray-50 flex flex-col">
             <PublicNavbar />
@@ -26,26 +72,24 @@ export default function DetailedInfo() {
                         </p>
                     </div>
 
-                    <div className=" space-y-8 border border-gray-300 rounded-md p-6 bg-white shadow-sm">
-
-                        <div className="flex">
-                            <div className="flex justify-center items-center gap-4">
+                    <div className="space-y-8 border border-gray-300 rounded-md p-6 bg-white shadow-sm">
+                        <div className="flex items-start gap-4 ">
+                            <div className="flex justify-center items-center gap-4 pt-1">
                                 <Image src="/Vector (14).png" alt="Decoration" width={20} height={20} />
                                 <Image src="/Vector (15).png" alt="Decoration" width={20} height={20} />
                             </div>
-                            <div >
+                            <div>
                                 <div>
-                                    <h2 className="text-lg font-semibold text-gray-800 mb-2">Short Summary</h2>
-                                    <ul className="list-disc list-inside text-sm text-gray-500 space-y-1">
+                                    <h2 className="text-lg font-semibold text-gray-400 mb-2">Short Summary</h2>
+                                    <ul className="list-disc list-inside text-sm text-gray-400 space-y-1">
                                         <li>Introduce yourself, your team (if you have), and your background.</li>
                                         <li>Briefly describe the long-term and short-term goals of your brand and why it's important to you.</li>
                                     </ul>
                                 </div>
 
-
                                 <div>
-                                    <h2 className="text-lg font-semibold text-gray-800 mb-2">The Impact</h2>
-                                    <ul className="list-disc list-inside text-sm text-gray-500 space-y-1">
+                                    <h2 className="text-lg font-semibold text-gray-400 mb-2">The Impact</h2>
+                                    <ul className="list-disc list-inside text-sm text-gray-400 space-y-1">
                                         <li>Share more about your brand and highlight how contributions can make a meaningful impact.</li>
                                         <li>Explain why your brand is important to contributors and how it positively influences the world.</li>
                                         <li>Showcase your brand's proven success and past achievements, if applicable.</li>
@@ -53,16 +97,14 @@ export default function DetailedInfo() {
                                     </ul>
                                 </div>
 
-
                                 <div>
-                                    <h2 className="text-lg font-semibold text-gray-800 mb-2">The Story</h2>
-                                    <ul className="list-disc list-inside text-sm text-gray-500 space-y-1">
+                                    <h2 className="text-lg font-semibold text-gray-400 mb-2">The Story</h2>
+                                    <ul className="list-disc list-inside text-sm text-gray-400 space-y-1">
                                         <li>Share the vision of your organization and the journey that led to its establishment.</li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
-
 
                         <div className="flex justify-center gap-4 pt-4">
                             <button className="px-6 py-2 border border-blue-600 text-blue-600 rounded-md hover:bg-blue-50 transition-all">
@@ -80,21 +122,53 @@ export default function DetailedInfo() {
                         <p className="text-sm text-gray-500">
                             Help your contributors find you faster (at least 3 options). Connect your socials so they get to know you better.
                         </p>
-                        <div className="flex items-center justify-center gap-4 ">
-                            <input
-                                type="text"
-                                placeholder="https://your-social-link.com"
-                                className="w-full border border-gray-300 rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-                            />
-                            <input
-                                type="text"
-                                placeholder="https://your-social-link.com"
-                                className="w-full border border-gray-300 rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-                            />
+
+                        <div className="flex flex-col gap-4">
+                            {socialLinks.map((link, index) => (
+                                <div key={index} className="flex items-center gap-4">
+                                    {/* Select without icon */}
+                                    <div className="w-1/3">
+                                        <select
+                                            value={link.platform}
+                                            onChange={(e) => updateLink(index, "platform", e.target.value)}
+                                            className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                        >
+                                            {platforms.map((p) => (
+                                                <option key={p.value} value={p.value}>
+                                                    {p.label}
+                                                </option>
+                                            ))}
+                                        </select>
+                                    </div>
+
+                                    {/* URL Input */}
+                                    <input
+                                        type="text"
+                                        placeholder="https://your-social-link.com"
+                                        value={link.url}
+                                        onChange={(e) => updateLink(index, "url", e.target.value)}
+                                        className="w-full border border-gray-300 rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    />
+
+                                    {/* Remove Button */}
+                                    <button
+                                        type="button"
+                                        onClick={() => removeSocialLink(index)}
+                                        className="text-red-500 text-sm hover:underline"
+                                    >
+                                        Remove
+                                    </button>
+                                </div>
+                            ))}
                         </div>
-                            <button className="text-blue-600 hover:underline text-sm">
-                                + Add social link
-                            </button>
+
+                        <button
+                            type="button"
+                            onClick={addSocialLinks}
+                            className="text-blue-600 hover:underline text-sm"
+                        >
+                            + Add social link
+                        </button>
                     </div>
 
                     {/* Continue Button */}
