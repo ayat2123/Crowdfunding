@@ -21,7 +21,7 @@ export default function PublicNavbar() {
         <div className="flex items-center justify-between w-full md:w-auto gap-4">
           <div className="flex items-center justify-center">
             <Image
-              src="/vector.png"
+              src="/Vector.png"
               alt="Site Logo"
               width={60}
               height={60}
