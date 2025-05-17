@@ -22,11 +22,11 @@ export default function DetailedInfo() {
         setSocialLinks(prev => [...prev, { platform: "", url: "" }]);
     };
 
-    const removeSocialLink = (indexToRemove) => {
+    const removeSocialLink = (indexToRemove:number) => {
         setSocialLinks(prev => prev.filter((_, index) => index !== indexToRemove));
     };
 
-    const updateLink = (index, key, value) => {
+    const updateLink = (index:number, key:"platform" | "url", value:string) => {
         const newLinks = [...socialLinks];
 
         if (key === "platform") {
