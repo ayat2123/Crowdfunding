@@ -25,8 +25,8 @@ export default function LoginNavbar() {
       <div className="max-w-md mx-auto p-4">
         <ul className='flex items-center justify-center mt-3'>
           {links.map((link, index) => (
-            <li className='p-1 flex items-center gap-1' key={link.text}>
-              <Link href={link.href} className="no-underline hover:text-indigo-600 text-sm">{link.text}</Link>
+            <li className='p-2 flex items-center gap-1' key={link.text}>
+              <Link href={link.href} className="no-underline hover:text-indigo-600 text-xs">{link.text}</Link>
               {index !== links.length - 1 && (
                 <Image 
                   src="/Vector (4).png"

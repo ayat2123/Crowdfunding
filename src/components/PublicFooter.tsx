@@ -7,11 +7,11 @@ import LanguageToggle from './LanguageToggle';
 export default function PublicFooter() {
   return (
     <footer className="bg-white">
-      <div className="container mx-auto px-4 py-4">
+      <div className="container mx-auto px-4 mt-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  px-16">
           <div>
-            <h4 className="text-sm  mb-4 text-gray-800">َABOUT</h4>
-            <ul className="space-y-2">
+            <h4 className="text-sm  mb-0.5 text-gray-800">َABOUT</h4>
+            <ul >
               <li>
                 <Link href="/about" className="text-xs text-gray-600 hover:text-indigo-600">
                   About Us
@@ -27,8 +27,8 @@ export default function PublicFooter() {
 
 
           <div>
-            <h4 className="text-sm mb-4 text-gray-800">RESOURES</h4>
-            <ul className="space-y-2">
+            <h4 className="text-sm mb-0.5 text-gray-800">RESOURES</h4>
+            <ul>
               <li>
                 <Link href="/help" className="text-xs text-gray-600 hover:text-indigo-600">
                   Blog
@@ -49,8 +49,8 @@ export default function PublicFooter() {
 
 
           <div>
-            <h4 className="text-sm mb-4 text-gray-800">CONTRIBUTING</h4>
-            <ul className="space-y-2">
+            <h4 className="text-sm mb-0.5 text-gray-800">CONTRIBUTING</h4>
+            <ul >
               <li>
                 <Link href="/help" className="text-xs text-gray-600 hover:text-indigo-600">
                   Brand annd Organization
