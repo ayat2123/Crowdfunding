@@ -191,6 +191,55 @@ export default function Profile() {
             </div>
           )}
         </div>
+        {/* About Section */}
+        <div className="w-full px-4 md:px-16 mt-16">
+          <div className="max-w-4xl mx-auto">
+            <div className="flex items-center gap-8 mb-6">
+              <h2 className="text-xl font-semibold text-gray-800">About</h2>
+              <button className="flex items-center bg-[#EDE9FE] px-4 py-2 rounded shadow text-sm text-[#5B21B6] hover:bg-[#DDD6FE] transition">
+                <Image
+                  src="/Vector (19).png"
+                  alt="edit icon"
+                  width={15}
+                  height={15}
+                  className="mr-2"
+                />
+                Edit
+              </button>
+            </div>
+
+            <div className="bg-[#E7E7E7] border-2 border-gray-200 rounded-md p-6 text-sm text-[#4B5563] mb-8 min-h-[200px]">
+            </div>
+
+            <div className="space-y-10 text-sm text-gray-700 leading-relaxed">
+              <div>
+                <h3 className="text-lg font-semibold text-[#959595] mb-2">Short Summary</h3>
+                <ul className="list-disc list-inside  text-[#959595] space-y-1">
+                  <li>Introduce yourself, your team (if you have), and your background.</li>
+                  <li>Briefly describe the long-term and short-term goals of your brand and why it's important to you.</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-lg font-semibold text-[#959595] mb-2">The Impact</h3>
+                <ul className="list-disc list-inside  text-[#959595] space-y-1">
+                  <li>Share more about your brand and highlight how contributions can make a meaningful impact.</li>
+                  <li>Explain why your brand is important to contributors and how it positively influences the world.</li>
+                  <li>Showcase your brand's proven success and past achievements, if applicable.</li>
+                  <li>Build trust by sharing authentic stories and experiences.</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-lg font-semibold text-[#959595] mb-2">The Story</h3>
+                <ul className="list-disc list-inside  text-[#959595] space-y-1">
+                  <li>Share the vision of your organization and the journey that led to its establishment.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
 
       <PublicFooter />
